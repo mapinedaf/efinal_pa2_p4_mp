@@ -2,6 +2,7 @@ package com.uce.efinal2_pa2_p4_mp.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,7 +19,9 @@ public class MateriaController {
     IMateriaService materiaService;
 
     @GetMapping("/registro-materia")
-    public String principal() {
+    public String principal(Model model) {
+
+        model.addAttribute("materia", new Materia());
 
         return "vistaIngresarMateria";
     }
